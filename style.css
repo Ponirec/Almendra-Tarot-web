@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Krona+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-primario: #B17F59;
+    --color-secundario: #A5B68D;
+    --color-terciario: #F2E2B1 ;
+    --color-hover: #B17F59 ;
+
+    --fuente-Alice: "Alice", sans serif;
+    
+}
+
+body {
+    background-color: var(--color-terciario) ;
+    background-image: url(Fondo.jpeg);
+    font-family: var(--fuente-Alice);
+   
+}
+  
+.presentacion__imagen {
+    border-radius: 10px;
+    display: inline-block;
+    width: 280px;
+    height: auto;
+    
+}
+
+.header {
+    padding-bottom: 30px ;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+.header__menu__link {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 50px;
+    box-shadow: inset 0 -5px 0 var(--color-primario);
+    text-decoration: none;
+    color: #5a3e1b;
+    
+}
+
+.header__menu__link.active {
+  color: var(--color-primario); /* Change the color of the active link */
+  /* You can add other styles here to visually indicate the active link */
+  font-weight: bold; /* Example: make the active link bold */
+}
+
+
+.header__menu__link:hover {
+    color: var(--color-primario);
+}
+
+.header__menu__link:active {
+  color: var(--color-primario);
+}
+
+.iconos {
+    width: 100px;
+    height: auto;
+    border-radius: 5%;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    color: #5a3e1b;
+}
+
+.imagen {
+    place-items: center;
+    width: 280px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5%;
+}
+
+.texto {
+    text-align: center;
+    color: #5a3e1b;
+}
+
+.button {
+    margin-top: 3%;
+    margin-bottom: auto;
+}
+   /* juego carta */ 
+#cartaMostrada {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .carta {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    width: 150px;
+  }
+  
+  .carta img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .carta h2 {
+    color: #5a3e1b;
+    font-family: 'Alice', serif;
+  }
+  
+  .carta p {
+    font-size: 14px;
+    font-style: italic;
+    color: #444;
+  }
+  
+  /* Animación de aparición */
+  .fade-in {
+    animation: aparecer 1s ease-in-out;
+  }
+  
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
