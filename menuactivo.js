@@ -1,3 +1,8 @@
+if (window.matchMedia("(max-width: 768px)").matches) {
+  // código solo para pantallas pequeñas
+  console.log("Estás en móvil o pantalla chica");
+}
+
 function highlightActiveMenu() {
     const menuLinks = document.querySelectorAll('.header__menu__link');
     const currentPath = window.location.pathname;
