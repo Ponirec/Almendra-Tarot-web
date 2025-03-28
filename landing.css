@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Krona+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-primario: #B17F59;
+    --color-secundario: #A5B68D;
+    --color-terciario: #F2E2B1 ;
+    --color-hover: #B17F59 ;
+
+    --fuente-Alice: "Alice", sans serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /*background: linear-gradient(180deg, #f2e2b1 0%, #d8c3a5 100%);*/
+    background-image: url("Fondo.jpeg");
+    /*background-blend-mode: multiply;*/
+    background-size: cover;
+    background-position: center;
+    font-family: 'Alice', serif;
+    color: #5a3e1b;
+  }
+
+  .header {
+    padding-top: 8px;
+    padding-bottom: 40px ;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+
+.header__menu__link {
+  /* ... (your existing styles) ... */
+  position: relative; /* Keep this for potential future positioning */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Add background-color transition */
+  text-decoration: none; /* Remove the default underline */
+  box-shadow: none; /* Remove the box-shadow */
+  padding: 10px 30px; /* Add padding to the link */
+  border-radius: 5px; /* Add border radius to the link */
+  color: #5a3e1b;
+}
+
+.header__menu__link.active {
+  color: white; /* Change the color of the active link */
+  background-color: var(--color-primario); /* Add background color to the active link */
+  font-weight: bold; /* Example: make the active link bold */
+}
+
+.header__menu__link:hover {
+  color: white; /* Change the color of the hover link */
+  background-color: var(--color-primario); /* Add background color to the hover link */
+}
+
+
+.header__menu__link:active {
+  color: var(--color-primario);
+}
+  
+  .landing-container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .landing-title {
+    font-size: 2rem;
+    margin-bottom: -80px;
+    margin-top: -30px;
+    text-shadow: 2px 2px 4px #b17f59;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: -50px;
+    margin-top: -100px;
+  }
+  
+  .landing-button {
+    padding: 10px 30px;
+    margin-top: -100px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background-color: #b17f59;
+    color: white;
+    text-decoration: none;
+    font-family: 'Alice', serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .landing-button:hover {
+    background-color: #8a5e3e;
+    transform: scale(1.05);
+  }
+
+  .logo {
+    width: 0%;
+    margin: 0%;
+    margin-bottom: 100px;
+  }
+  
+  /* Animación */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .glow-effect {
+    animation: brillar 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  @keyframes brillar {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.2),
+                  0 0 10px rgba(177, 127, 89, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+                  0 0 30px rgba(177, 127, 89, 0.5);
+    }
+  }
+
+  #particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background: transparent;
+    overflow: hidden;
+  }
+  
+  .particle {
+    position: absolute;
+    background: var(--color-primario);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: floatUp 8s linear infinite;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1);
+      opacity: 0;
+    }
+  }
+  

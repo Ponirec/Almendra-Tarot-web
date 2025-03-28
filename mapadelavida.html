@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de la Vida - Tarot</title>
+  <link rel="stylesheet" href="mapadelavida.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__menu">
+            <a class="header__menu__link" href="landing.html">Home</a>
+            <a class="header__menu__link" href="index.html">Carta de Hoy</a>
+            <a class="header__menu__link" href="about.html">Sobre mi</a>
+            <a class="header__menu__link" href="Servicios.html">Servicios</a>
+            <a class="header__menu__link" href="testimonios.html">Testimonios</a>
+            <a class="header__menu__link" href="mapadelavida.html">Mapa de la vida</a>
+            <a class="header__menu__link" href="Contacto.html">Contacto</a>
+        </nav>
+    </header>
+  <div class="tarot-map">
+    <h1>El Mapa de la Vida</h1>
+    <p>Explora tu viaje espiritual a través de los Arcanos Mayores del Tarot.</p>
+
+    <!-- Camino de cartas -->
+     <!-- Hidden -->
+    <div style="display: none;" class="card-path">
+      <div class="tarot-card" data-card="El Loco">
+        <img src="img/elloco.png" alt="El Loco" />
+        <span>El Loco</span>
+      </div>
+      <div class="tarot-card" data-card="El Mago">
+        <img src="img/elmago.png" alt="El Mago" />
+        <span>El Mago</span>
+      </div>
+      <div class="tarot-card" data-card="La Sacerdotisa">
+        <img src="img/lasacerdotisa.png" alt="La Sacerdotisa" />
+        <span>La Sacerdotisa</span>
+      </div>
+      <div class="tarot-card" data-card="La Carro">
+        <img src="img/Elcarro.png" alt="La Carro" />
+        <span>El Carro</span>
+      </div>
+      <!-- Puedes agregar más cartas aquí -->
+    </div>
+
+    <!-- Sección: Mi viaje -->
+    <div class="mi-viaje">
+      <h3>🔮 ¿En qué etapa estás tú?</h3>
+      <p>Responde y descubre dónde te encuentras en el mapa.</p>
+      <form id="formViaje">
+        <label>¿Te sientes en búsqueda de algo nuevo?</label><br>
+        <select class="button-map" id="pregunta1">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+          <option value="a veces">A veces</option>
+        </select><br><br>
+
+        <label>¿Estás enfrentando desafíos internos?</label><br>
+        <select class="button-map" id="pregunta2">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+          <option value="a veces">A veces</option>
+        </select><br><br>
+
+        <label>¿Te sientes realizado/a con tu camino?</label><br>
+        <select class="button-map" id="pregunta3">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+          <option value="a veces">A veces</option>
+        </select><br><br>
+
+        <button class="button" type="submit">Ver mi etapa</button>
+      </form>
+      <div id="resultadoViaje" class="resultado-viaje"></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="card-modal" id="cardModal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalMeaning"></p>
+    </div>
+  </div>
+
+  <script src="mapadelavida.js"></script>
+  <script src="menuactivo.js"></script>
+</body>
+</html>

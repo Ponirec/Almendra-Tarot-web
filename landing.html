@@ -1,0 +1,52 @@
+<!-- landing.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenida</title>
+  <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__menu">
+            <a class="header__menu__link" href="landing.html">Home</a>
+            <a class="header__menu__link" href="index.html">Carta de Hoy</a>
+            <a class="header__menu__link" href="about.html">Sobre mi</a>
+            <a class="header__menu__link" href="Servicios.html">Servicios</a>
+            <a class="header__menu__link" href="testimonios.html">Testimonios</a>
+            <a class="header__menu__link" href="mapadelavida.html">Mapa de la vida</a>
+            <a class="header__menu__link" href="Contacto.html">Contacto</a>
+        </nav>
+    </header>
+  <div class="landing-container">
+    <h1 class="landing-title fade-in-up">Almendra Tarot</h1>
+    <img class="imagen logo" src="AlmendraTarotLogoTest.png" alt="logo">
+    <p class="landing-subtitle fade-in-up">Abre tu mente. Conecta con tu sabiduría interior.</p>
+    <a href="index.html" class="landing-button">Entrar</a>
+  </div>
+  <div id="particles"></div>
+  <script>
+    const container = document.getElementById("particles");
+  
+    function createParticle() {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      const size = Math.random() * 4 + 2 + "px";
+      particle.style.width = size;
+      particle.style.height = size;
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.animationDuration = (5 + Math.random() * 5) + "s";
+      container.appendChild(particle);
+  
+      setTimeout(() => {
+        particle.remove();
+      }, 10000);
+    }
+  
+    setInterval(createParticle, 300);
+  </script>
+  
+</body>
+</html>

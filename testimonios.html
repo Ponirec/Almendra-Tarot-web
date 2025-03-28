@@ -4,33 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Almendra Tarot</title>
+    <title>Testimonios</title>
+    <style>
+        /* Basic carousel styles (you can customize these) */
+        .carousel-container {
+            width: 300px; /* Adjust as needed */
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2px;
+        }
+
+        .carousel-nav button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #5a3e1b;
+        }
+        .presentacion__imagen {
+            width: 300px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <nav class="header__menu">
-            <a class="header__menu__link" href="index.html">Home</a>
+            <a class="header__menu__link" href="landing.html">Home</a>
+            <a class="header__menu__link" href="index.html">Carta de Hoy</a>
             <a class="header__menu__link" href="about.html">Sobre mi</a>
             <a class="header__menu__link" href="Servicios.html">Servicios</a>
             <a class="header__menu__link" href="testimonios.html">Testimonios</a>
+            <a class="header__menu__link" href="mapadelavida.html">Mapa de la vida</a>
             <a class="header__menu__link" href="Contacto.html">Contacto</a>
-
         </nav>
     </header>
     <main>
-        <h1>Almendra Tarot</h1>
-        <p>
-        </p>
-            
+        <h1 class="container">Testimonios Curso de Tarot</h1>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <!--<img class="presentacion__imagen" src="portada testimonios.jpg" alt="Carta">-->
+                <img class="presentacion__imagen" src="Testimonio 1.jpg" alt="t.1">
+                <img class="presentacion__imagen" src="Testimonio2.jpg" alt="t.2">
+                <img class="presentacion__imagen" src="Testimonio3.jpg" alt="t.3">
+                <img class="presentacion__imagen" src="Testimonio 4.jpg" alt="t.4">
+            </div>
+            <div class="carousel-nav">
+                <button id="prevBtn">&lt;</button>
+                <button id="nextBtn">&gt;</button>
+            </div>
+        </div>
     </main>
-   
-    <img class="presentacion__imagen" src="portada testimonios.jpg" alt="Carta">
-    <img class="presentacion__imagen" src="Testimonio 1.jpg" alt="t.1">
-    <img class="presentacion__imagen" src="Testimonio2.jpg" alt="t.2">
-    <img class="presentacion__imagen" src="Testimonio3.jpg" alt="t.3">
-    <img class="presentacion__imagen" src="Testimonio 4.jpg" alt="t.4">
-    <div>
-        
-    </div>
+    <script src="app.js"></script>
+    <script src="menuactivo.js"></script>
+    <script src="testimonios.js"></script>
 </body>
 </html>

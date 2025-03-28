@@ -14,10 +14,16 @@
 body {
     background-color: var(--color-terciario) ;
     background-image: url(Fondo.jpeg);
-    font-family: var(--fuente-Alice);
+    font-family: 'Roboto Condensed', sans-serif;
+    /*font-family: var(--fuente-Alice);*/
    
 }
 
+h1, h2, h3 {
+  font-family: 'Alice', serif;
+  letter-spacing: 1px;
+}
+  
 .presentacion__imagen {
     border-radius: 10px;
     display: inline-block;
@@ -27,14 +33,323 @@ body {
 }
 
 .header {
-    padding-bottom: 30px ;
+    padding-bottom: 40px ;
+    margin: 0;
+    display: grid;
+    place-items: center;
 }
 
+
 .header__menu__link {
-    font-size: 2rem;
-    display: inline-block;
-    padding: 50px;
-    box-shadow: inset 0 -5px 0 var(--color-primario);
-    text-decoration: none;
+  /* ... (your existing styles) ... */
+  position: relative; /* Keep this for potential future positioning */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Add background-color transition */
+  text-decoration: none; /* Remove the default underline */
+  box-shadow: none; /* Remove the box-shadow */
+  padding: 10px 30px; /* Add padding to the link */
+  border-radius: 5px; /* Add border radius to the link */
+  color: #5a3e1b;
 }
+
+.header__menu__link.active {
+  color: white; /* Change the color of the active link */
+  background-color: var(--color-primario); /* Add background color to the active link */
+  font-weight: bold; /* Example: make the active link bold */
+}
+
+.header__menu__link:hover {
+  color: white; /* Change the color of the hover link */
+  background-color: var(--color-primario); /* Add background color to the hover link */
+}
+
+
+.header__menu__link:active {
+  color: var(--color-primario);
+}
+
+.iconos {
+    width: 70px;
+    height: auto;
+    border-radius: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    color: #5a3e1b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imagen {
+    place-items: center;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    flex: 0.5;
+    min-width: 250px;
+    text-align: right;
+    overflow: hidden;
+    max-width: 250px;
+   
+}
+
+.texto {
+    text-align: center;
+    color: #5a3e1b;
+}
+
+.button {
+  margin-top: 3%;
+  margin-bottom: auto;
+  background-color: var(--color-primario); /* Use your primary color */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 15px 30px; /* Add padding */
+  border-radius: 25px; /* Rounded corners */
+  font-size: 18px; /* Larger text */
+  font-family: var(--fuente-Alice); /* Use your font */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  width: 300px;
+}
+
+.button-map {
+  margin-top: 3%;
+  margin-bottom: auto;
+  background-color: var(--color-primario); /* Use your primary color */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 15px 30px; /* Add padding */
+  border-radius: 50px; /* Rounded corners */
+  font-size: 18px; /* Larger text */
+  font-family: var(--fuente-Alice); /* Use your font */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  width: 260px;
+}
+
+.button:hover {
+  background-color: #8a5e3e; /* Darker brown on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Change shadow on hover */
+  transform: translateY(-2px); /* Move up slightly on hover */
+}
+
+.button-map:hover {
+  background-color: #8a5e3e; /* Darker brown on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Change shadow on hover */
+  transform: translateY(-2px); /* Move up slightly on hover */
+}
+   /* juego carta */ 
+#cartaMostrada {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .carta {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    width: 350px;
+    overflow: hidden; /* Add this line */
+}
+
+.carta img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 400px;
+    border-radius: 5px;
+    object-fit: cover; /* Change this line */
+    object-position: center;
+}
+
+  .carta h2 {
+    color: #5a3e1b;
+    font-family: 'Alice', serif;
+  }
+  
+  .carta p {
+    font-size: 14px;
+    font-style: italic;
+    color: #444;
+  }
+  
+  /* Animación de aparición */
+  .fade-in {
+    animation: aparecer 1s ease-in-out;
+  }
+  
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  /* about */
+.about-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Add some space between the text and image */
+    padding: 20px;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-text {
+    flex: 1; /* Allow text to take up available space */
+    min-width: 300px; /* Ensure text doesn't get too narrow */
+    text-align: left; /* Align text to the left */
+    color: #5a3e1b;
+}
+
+.about-image {
+    flex: 0.5; /* Allow image to take up available space */
+    min-width: 250px; /* Ensure image doesn't get too narrow */
+    text-align: right; /* Align image to the right */
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    float:left;
+    margin-right: 150px;
+}
+
+.about-image .imagen {
+    margin: 0; /* Remove default margin */
+    border-radius: 0;
+    object-fit: cover;
+    display: block;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center;
+    }
+
+    .about-image {
+        text-align: center; /* Center image on smaller screens */
+        border-radius: 10px;
+    }
+}
+/* services */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.services-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    color: #5a3e1b;
+}
+
+.services-image {
+    flex: 0.5;
+    min-width: 250px;
+    text-align: right;
+    border-radius: 20px;
+    overflow: hidden;
+    border-radius: 0px; /* O el valor que prefieras */
+    display: block;
+    max-width: 350px;
+    margin-right: 100px;
     
+}
+
+.services-image .imagen {
+  
+  height: auto;
+  display: block;
+  border-radius: 10px; /* El redondeo lo da el contenedor */
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.workshop-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.workshop-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    color: #5a3e1b;
+}
+
+.workshop-image {
+    flex: 0.5;
+    min-width: 250px;
+    text-align: right;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+    max-width: 350px;
+    margin-right: 100px;
+}
+
+.workshop-image .imagen {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .services-container,
+    .workshop-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services-image,
+    .workshop-image {
+        text-align: center;
+        overflow: hidden;
+        border-radius: 20px; /* O el valor que prefieras */
+        display: block;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+.fade-transition {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+body.page-loaded {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
