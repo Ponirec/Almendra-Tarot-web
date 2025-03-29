@@ -76,7 +76,7 @@ const cartas = [
   },
   {
     nombre: "El Diablo",
-    imagen: "img/ElDiablo.png",
+    imagen: "img/Eldiablo.png",
     significado: "Apego, lujuria, tentación y esclavitud.",
   },
   {

@@ -8,9 +8,9 @@ function highlightActiveMenu() {
 
         // Normalize paths for comparison
         const normalizedCurrentPath = currentPath === '/' ? '/index.html' : currentPath;
-        const normalizedLinkPath = '/' + linkPath;
+        const normalizedLinkPath = window.location.pathname.includes(linkPath);
 
-        if (normalizedCurrentPath === normalizedLinkPath) {
+        if (normalizedLinkPath) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
