@@ -131,7 +131,8 @@ h1, h2, h3 {
   cursor: pointer; /* Pointer cursor on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
   transition: all 0.3s ease; /* Smooth transition for hover effects */
-  width: 260px;
+  width: 258px;
+  text-align: center;
 }
 
 .button:hover {
