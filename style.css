@@ -32,13 +32,11 @@ h1, h2, h3 {
     
 }
 
-@media (max-width: 768px){
 .header {
     padding-bottom: 40px ;
     margin: 0;
     display: grid;
     place-items: center;
-}
 }
 
 .header__menu__link {
@@ -354,3 +352,36 @@ body.page-loaded {
   transition: opacity 0.8s ease-in-out;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  color: #5a3e1b;
+}
+
+/* Estilos móviles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  .header__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-terciario);
+    padding: 20px 0;
+  }
+
+  .header__menu.active {
+    display: flex;
+  }
+
+  .header__menu__link {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
