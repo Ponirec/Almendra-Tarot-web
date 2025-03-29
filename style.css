@@ -93,6 +93,7 @@ h1, h2, h3 {
     text-align: right;
     overflow: hidden;
     max-width: 250px;
+    width: 100%;
    
 }
 
@@ -251,6 +252,14 @@ h1, h2, h3 {
     .about-image {
         text-align: center; /* Center image on smaller screens */
         border-radius: 10px;
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+    }
+
+    .about-text {
+      text-align: center;
+      padding: 10px;
     }
 }
 /* services */
@@ -266,20 +275,22 @@ h1, h2, h3 {
 .services-text {
     flex: 1;
     min-width: 300px;
-    text-align: left;
+    text-align: center;
+    padding: 10px;
     color: #5a3e1b;
 }
 
 .services-image {
     flex: 0.5;
     min-width: 250px;
-    text-align: right;
+    text-align: center;
     border-radius: 20px;
     overflow: hidden;
     border-radius: 0px; /* O el valor que prefieras */
     display: block;
     max-width: 350px;
-    margin-right: 100px;
+    margin: 0 auto;
+    float: none;
     
 }
 
@@ -305,19 +316,21 @@ h1, h2, h3 {
 .workshop-text {
     flex: 1;
     min-width: 300px;
-    text-align: left;
+    text-align: center;
+    padding: 10px;
     color: #5a3e1b;
 }
 
 .workshop-image {
     flex: 0.5;
     min-width: 250px;
-    text-align: right;
+    text-align: center;
     border-radius: 10px;
     overflow: hidden;
     display: block;
     max-width: 350px;
-    margin-right: 100px;
+    margin: 0 auto;
+    float: none;
 }
 
 .workshop-image .imagen {
