@@ -134,3 +134,49 @@ body {
     font-weight: bold;
   }
   
+  @media (max-width: 768px) {
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
+  
+    .header__menu__link {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    .card-path {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .tarot-card {
+      width: 60%; /* que ocupe más espacio en móviles */
+      max-width: 200px;
+    }
+  
+    .modal-content {
+      width: 90%;
+      max-width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .mi-viaje {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .tarot-map {
+      padding: 1rem;
+    }
+  
+    h1, h2, h3, p {
+      text-align: center;
+    }
+  }
+  
