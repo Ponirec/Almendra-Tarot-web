@@ -114,7 +114,7 @@ h1, h2, h3 {
   cursor: pointer; /* Pointer cursor on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
   transition: all 0.3s ease; /* Smooth transition for hover effects */
-  width: 300px;
+  width: 200px;
 }
 
 .button-map {
@@ -371,10 +371,12 @@ body.page-loaded {
   .header__menu {
     display: none;
     flex-direction: column;
-    align-items: left;
-    /*background-color: var(--color-terciario);*/
-    padding: 20px 0;
+    align-items: center;
+    background-color: transparent; /* ✅ fondo transparente */
+    padding: 10px 0;
+    gap: 10px;
   }
+  
 
   .header__menu.active {
     display: flex;
