@@ -371,7 +371,7 @@ body.page-loaded {
   .header__menu {
     display: none;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     /*background-color: var(--color-terciario);*/
     padding: 20px 0;
   }
