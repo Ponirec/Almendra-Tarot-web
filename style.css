@@ -263,7 +263,7 @@ h1, h2, h3 {
 
 .about-image .imagen {
     margin: 0; /* Remove default margin */
-    border-radius: 0;
+    border-radius: 10px;
     object-fit: cover;
     display: block;
     padding: 0;
@@ -276,6 +276,7 @@ h1, h2, h3 {
     .about-container {
         flex-direction: column; /* Stack items vertically on smaller screens */
         text-align: center;
+        padding: 15px;
     }
 
     .about-image {
@@ -288,7 +289,7 @@ h1, h2, h3 {
 
     .about-text {
       text-align: center;
-      padding: 10px;
+      padding: 0 10px;
     }
 }
 /* services */
