@@ -202,5 +202,25 @@ body {
     .logo {
       width: 140px;
     }
+
+    /* Oculto por defecto en móviles */
+@media (max-width: 768px) {
+  .header__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 999;
+  }
+
+  /* Se muestra al hacer clic */
+  .header__menu.active {
+    display: flex;
+  }
+}
   }
   
