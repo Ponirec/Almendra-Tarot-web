@@ -142,9 +142,11 @@ body {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
+    opacity: 0;
     background: transparent;
     overflow: hidden;
+    animation: fadeInParticles 1.5s ease forwards;
   }
   
   .particle {
@@ -152,6 +154,7 @@ body {
     background: var(--color-primario);
     border-radius: 50%;
     opacity: 0.5;
+    pointer-events: none;
     animation: floatUp 8s linear infinite;
   }
   
@@ -168,10 +171,23 @@ body {
       opacity: 0;
     }
   }
+
+  @keyframes pulseTap {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   
   @media (max-width: 768px) {
     .logo:active {
       transform: scale(1.1);
+      animation: pulseTap 0.3s ease;
       filter: brightness(1.15) drop-shadow(0 0 15px rgba(255, 215, 150, 0.5));
     }
   }
