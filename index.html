@@ -53,9 +53,15 @@
       setInterval(createParticle, 300);
   
       // Menú hamburguesa
-      document.getElementById("menu-toggle").addEventListener("click", () => {
-        document.getElementById("menu").classList.toggle("active");
-      });
+      document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+});
+
     </script>
     <script src="app.js"></script>
     <script src="menuactivo.js"></script>
