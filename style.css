@@ -279,11 +279,12 @@ h1, h2, h3 {
     align-items: center;
     gap: 20px;
     padding: 20px;
+    max-width: 100%;
 }
 
 .services-text {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
     text-align: center;
     padding: 10px;
     color: #5a3e1b;
@@ -320,6 +321,7 @@ h1, h2, h3 {
     align-items: center;
     gap: 20px;
     padding: 20px;
+    max-width: 100%;
 }
 
 .workshop-text {
@@ -380,6 +382,10 @@ body.page-loaded {
   cursor: pointer;
   padding: 10px;
   color: #5a3e1b;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
 }
 
 /* Estilos móviles */

@@ -68,13 +68,13 @@ body {
   .landing-title {
     font-size: 2rem;
     margin-bottom: -80px;
-    margin-top: -30px;
+    margin-top: 30px;
     text-shadow: 2px 2px 4px #b17f59;
   }
   
   .landing-subtitle {
     font-size: 1.5rem;
-    margin-bottom: -50px;
+    margin-bottom: 50px;
     margin-top: -100px;
   }
   
@@ -189,6 +189,19 @@ body {
       transform: scale(1.1);
       animation: pulseTap 0.3s ease;
       filter: brightness(1.15) drop-shadow(0 0 15px rgba(255, 215, 150, 0.5));
+    }
+
+    .landing-title {
+      font-size: 1.8rem;
+    }
+  
+    .landing-subtitle {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+  
+    .logo {
+      width: 140px;
     }
   }
   
