@@ -100,6 +100,18 @@ body {
     width: 0%;
     margin: 0%;
     margin-bottom: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1) drop-shadow(0 0 10px rgba(255, 215, 150, 0.4));
+  }
+
+  .logo:active {
+    transform: scale(1.05);
+    filter: brightness(1.1) drop-shadow(0 0 10px rgba(255, 215, 150, 0.4));
   }
   
   /* Animación */
@@ -154,6 +166,13 @@ body {
     100% {
       transform: translateY(-10vh) scale(1);
       opacity: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo:active {
+      transform: scale(1.1);
+      filter: brightness(1.15) drop-shadow(0 0 15px rgba(255, 215, 150, 0.5));
     }
   }
   
