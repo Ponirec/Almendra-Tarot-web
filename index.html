@@ -33,40 +33,39 @@
     <div id="particles"></div>
   
     <script>
-      const container = document.getElementById("particles");
-  
-      function createParticle() {
-        const particle = document.createElement("div");
-        particle.classList.add("particle");
-        const size = Math.random() * 4 + 2 + "px";
-        particle.style.width = size;
-        particle.style.height = size;
-        particle.style.left = Math.random() * 100 + "vw";
-        particle.style.animationDuration = (5 + Math.random() * 5) + "s";
-        container.appendChild(particle);
-  
-        setTimeout(() => {
-          particle.remove();
-        }, 10000);
-      }
-  
-      setInterval(createParticle, 300);
-  
-      // Menú hamburguesa
-      document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("active");
-    });
-  }
-});
-
-
-    </script>
-    <script src="app.js"></script>
-    <script src="menuactivo.js"></script>
-  </body>
-  </html>
+        // Partículas
+        const container = document.getElementById("particles");
+      
+        function createParticle() {
+          const particle = document.createElement("div");
+          particle.classList.add("particle");
+          const size = Math.random() * 4 + 2 + "px";
+          particle.style.width = size;
+          particle.style.height = size;
+          particle.style.left = Math.random() * 100 + "vw";
+          particle.style.animationDuration = (5 + Math.random() * 5) + "s";
+          container.appendChild(particle);
+      
+          setTimeout(() => {
+            particle.remove();
+          }, 10000);
+        }
+      
+        setInterval(createParticle, 300);
+      
+        // Menú hamburguesa (sin envolver en DOMContentLoaded)
+        const toggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+      
+        if (toggle && menu) {
+          toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+          });
+        }
+      </script>
+      
+      <script src="app.js"></script>
+      <script src="menuactivo.js"></script>
+      </body>
+      </html>
+      
