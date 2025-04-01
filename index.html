@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="landing.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="landing">
     <header class="header">
       <div class="menu-toggle" id="menu-toggle">☰</div>
       <nav class="header__menu" id="menu">
@@ -54,14 +54,16 @@
         setInterval(createParticle, 300);
       
         // Menú hamburguesa
-        const toggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
+        document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".landing #menu-toggle");
+    const menu = document.querySelector(".landing #menu");
 
-        if (toggle && menu) {
-        toggle.addEventListener("click", () => {
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
         menu.classList.toggle("active");
-        });
-        }
+      });
+    }
+  });
       </script>
       
       <script src="app.js"></script>

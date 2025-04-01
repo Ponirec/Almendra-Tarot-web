@@ -392,8 +392,6 @@ body.page-loaded {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
-    text-align: right;
-    margin-right: 20px;
   }
 
   .header__menu {

@@ -65,6 +65,10 @@ body {
     animation: fadeIn 1s ease-in-out;
   }
   
+  .landing .menu-toggle {
+    display: none;
+  }
+  
   .landing-title {
     font-size: 2rem;
     margin-bottom: -80px;
