@@ -208,6 +208,13 @@ body {
 
   .menu-toggle {
     display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-size: 28px;
+    cursor: pointer;
+    color: #5a3e1b;
   }
 
   .header__menu {
@@ -215,6 +222,8 @@ body {
     flex-direction: column;
     align-items: center;
     position: absolute;
+    padding: 10px 0;
+    gap: 10px;
     top: 60px;
     left: 0;
     width: 100%;
