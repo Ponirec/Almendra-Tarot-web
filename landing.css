@@ -68,7 +68,7 @@ body {
   .landing .menu-toggle {
     display: none;
   }
-  
+
   .landing-title {
     font-size: 2rem;
     margin-bottom: -80px;
@@ -210,6 +210,10 @@ body {
     /* Oculto por defecto en móviles */
 @media (max-width: 768px) {
 
+  .landing .menu-toggle {
+    display: block;
+  }
+  
   .menu-toggle {
     display: block;
     position: absolute;
