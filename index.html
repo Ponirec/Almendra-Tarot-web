@@ -54,14 +54,16 @@
         setInterval(createParticle, 300);
       
         // Menú hamburguesa (sin envolver en DOMContentLoaded)
+        document.addEventListener("DOMContentLoaded", () => {
         const toggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu");
-      
+
         if (toggle && menu) {
-          toggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-          });
+        toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        });
         }
+        })
       </script>
       
       <script src="app.js"></script>
