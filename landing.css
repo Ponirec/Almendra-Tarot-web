@@ -196,7 +196,7 @@ body {
 
     .landing-title {
       font-size: 1.8rem;
-      margin-top: 10px;
+      margin-top: -10px;
     }
   
     .landing-subtitle {
