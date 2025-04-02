@@ -196,6 +196,7 @@ body {
 
     .landing-title {
       font-size: 1.8rem;
+      margin-top: 10px;
     }
   
     .landing-subtitle {
@@ -205,6 +206,7 @@ body {
   
     .logo {
       width: 140px;
+      margin: 0;
     }
 
     /* Oculto por defecto en móviles 
