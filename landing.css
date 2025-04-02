@@ -65,9 +65,9 @@ body {
     animation: fadeIn 1s ease-in-out;
   }
   
-  .landing .menu-toggle {
+  /*.landing .menu-toggle {
     display: none;
-  }
+  }*/
 
   .landing-title {
     font-size: 2rem;
@@ -186,7 +186,7 @@ body {
       transform: scale(1);
     }
   }
-  
+  /*Resp moviles*/
   @media (max-width: 768px) {
     .logo:active {
       transform: scale(1.1);
@@ -207,13 +207,13 @@ body {
       width: 140px;
     }
 
-    /* Oculto por defecto en móviles */
-@media (max-width: 768px) {
+    /* Oculto por defecto en móviles 
+@media (max-width: 768px) {*/
 
   .landing .menu-toggle {
     display: block;
   }
-  
+
   .menu-toggle {
     display: block;
     position: absolute;
