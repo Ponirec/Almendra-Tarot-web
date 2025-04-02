@@ -23,32 +23,23 @@ window.addEventListener('popstate', highlightActiveMenu);
 
 // Espera a que el DOM esté cargado
 document.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("page-loaded");
-
-  const links = document.querySelectorAll("a[href]");
-
-  links.forEach(link => {
-    const href = link.getAttribute("href");
-
-    // Ignora enlaces internos tipo #sección o javascript:void
-    if (href.startsWith("#") || href.startsWith("javascript")) return;
-
-    // Normalizá la URL para evitar errores de navegación
-    const linkUrl = new URL(href, window.location.origin).href;
-    const currentUrl = window.location.href;
-
-    if (linkUrl !== currentUrl) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.body.classList.remove("page-loaded");
-
-        setTimeout(() => {
-          window.location.href = linkUrl;
-        }, 500); // tiempo para la animación
-      });
-    }
+    document.body.classList.add("page-loaded");
+  
+    // Agrega transición al hacer clic en enlaces
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      if (link.getAttribute("href") && !link.getAttribute("href").startsWith("#")) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const url = this.href;
+          document.body.classList.remove("page-loaded");
+          setTimeout(() => {
+            window.location.href = url;
+          }, 500); // coincide con el tiempo del fade-out
+        });
+      }
+    });
   });
-});
   
   // menu hamburguesa
   document.addEventListener("DOMContentLoaded", function () {
