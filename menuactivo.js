@@ -30,37 +30,24 @@ document.addEventListener("DOMContentLoaded", () => {
   links.forEach(link => {
     const href = link.getAttribute("href");
 
-    // Ignora enlaces internos tipo #sección o javascript:void
-    if (href.startsWith("#") || href.startsWith("javascript")) return;
+    // Ignora anclas y enlaces vacíos
+    if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
 
-    // Normalizá la URL para evitar errores de navegación
-    const linkUrl = new URL(href, window.location.origin).href;
-    const currentUrl = window.location.href;
+    const absoluteHref = new URL(href, window.location.origin).href;
+    const currentHref = window.location.href;
 
-    if (linkUrl !== currentUrl) {
+    // Solo redirige si estás yendo a otra página
+    if (absoluteHref !== currentHref) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
         document.body.classList.remove("page-loaded");
-
         setTimeout(() => {
-          window.location.href = linkUrl;
-        }, 500); // tiempo para la animación
+          window.location.href = absoluteHref;
+        }, 500);
       });
     }
   });
 });
-  
-  // menu hamburguesa
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-  
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
-      });
-    }
-  });
   
   
   
