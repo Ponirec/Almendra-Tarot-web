@@ -30,24 +30,26 @@ document.addEventListener("DOMContentLoaded", () => {
   links.forEach(link => {
     const href = link.getAttribute("href");
 
-    // Ignora anclas y enlaces vacíos
+    // Ignora enlaces vacíos, anclas o scripts
     if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
 
-    const absoluteHref = new URL(href, window.location.origin).href;
-    const currentHref = window.location.href;
+    const targetPath = new URL(href, window.location.origin).pathname;
+    const currentPath = window.location.pathname;
 
-    // Solo redirige si estás yendo a otra página
-    if (absoluteHref !== currentHref) {
-      link.addEventListener("click", function (e) {
+    link.addEventListener("click", function (e) {
+      if (targetPath !== currentPath) {
+        // Diferente página: ejecuta transición
         e.preventDefault();
         document.body.classList.remove("page-loaded");
         setTimeout(() => {
-          window.location.href = absoluteHref;
+          window.location.href = targetPath;
         }, 500);
-      });
-    }
+      }
+      // Si es igual, deja que el navegador recargue
+    });
   });
 });
+
   
   
   
