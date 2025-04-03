@@ -33,19 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     link.addEventListener("click", function (e) {
       const linkUrl = new URL(href, window.location.href);
-      const currentUrl = new URL(window.location.href);
 
-      if (linkUrl.pathname.toLowerCase() !== currentUrl.pathname.toLowerCase()) {
-        e.preventDefault();
-        document.body.classList.remove("page-loaded");
-        setTimeout(() => {
-          window.location.href = linkUrl.href;
-        }, 500);
-      }
+      e.preventDefault();
+      document.body.classList.remove("page-loaded");
+      setTimeout(() => {
+        window.location.href = linkUrl.href;
+      }, 500);
     });
   });
 
-  // 👇 ¡ESTO activa el menú hamburguesa!
+  // hamburguesa
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu");
 
@@ -55,4 +52,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
