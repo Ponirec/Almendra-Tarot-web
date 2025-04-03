@@ -22,6 +22,7 @@ window.addEventListener('load', highlightActiveMenu);
 window.addEventListener('popstate', highlightActiveMenu);
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("menuactivo.js is working");
   document.body.classList.add("page-loaded");
 
   const links = document.querySelectorAll("a[href]");
