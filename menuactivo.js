@@ -8,7 +8,10 @@ function highlightActiveMenu() {
 
         // Normalize paths for comparison
         const normalizedCurrentPath = currentPath === '/' ? '/index.html' : currentPath;
-        const normalizedLinkPath = window.location.pathname.includes(linkPath);
+        const normalizedLinkPath = linkPath === currentPath || 
+        (currentPath === '/' && linkPath === 'index.html') ||
+        (currentPath.endsWith('/') && linkPath === 'index.html');
+
 
         if (normalizedLinkPath) {
             link.classList.add('active');
@@ -30,26 +33,21 @@ document.addEventListener("DOMContentLoaded", () => {
   links.forEach(link => {
     const href = link.getAttribute("href");
 
-    // Ignora enlaces vacíos, anclas o scripts
+    // Ignora enlaces internos o vacíos
     if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
 
-    const targetPath = new URL(href, window.location.origin).pathname;
-    const currentPath = window.location.pathname;
-
     link.addEventListener("click", function (e) {
-      if (targetPath !== currentPath) {
-        // Diferente página: ejecuta transición
+      const linkUrl = new URL(href, window.location.href);
+      const currentUrl = new URL(window.location.href);
+
+      // Compara solo pathname (pero normalizado a minúsculas por seguridad)
+      if (linkUrl.pathname.toLowerCase() !== currentUrl.pathname.toLowerCase()) {
         e.preventDefault();
         document.body.classList.remove("page-loaded");
         setTimeout(() => {
-          window.location.href = targetPath;
+          window.location.href = linkUrl.href;
         }, 500);
       }
-      // Si es igual, deja que el navegador recargue
     });
   });
 });
-
-  
-  
-  
