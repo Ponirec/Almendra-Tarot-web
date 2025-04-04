@@ -1,27 +1,21 @@
 function highlightActiveMenu() {
   const menuLinks = document.querySelectorAll('.header__menu__link');
-  const currentPath = window.location.pathname;
+  const currentPath = window.location.pathname.toLowerCase();
 
   menuLinks.forEach(link => {
-    const linkHref = link.getAttribute('href');
-    const linkUrl = new URL(linkHref, window.location.origin);
-    const linkPath = linkUrl.pathname.replace(/\/$/, '').toLowerCase();
-    const current = currentPath.replace(/\/$/, '').toLowerCase();
+    const href = link.getAttribute('href').toLowerCase();
+    const hrefPath = '/' + href;
 
-    console.log('🧪 Comparando...');
-    console.log('→ linkHref:', linkHref);
-    console.log('→ linkPath:', linkPath);
-    console.log('→ current:', current);
+    const isHome = href === 'index.html' && (currentPath === '/' || currentPath.endsWith('/index.html'));
+    const isMatch = currentPath.endsWith(hrefPath);
 
-
-    if (linkPath === current || (current === '/index.html' && linkPath === '/')) {
+    if (isHome || isMatch) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
     }
   });
 }
-
 
 window.addEventListener('load', highlightActiveMenu);
 window.addEventListener('popstate', highlightActiveMenu);
@@ -58,4 +52,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
