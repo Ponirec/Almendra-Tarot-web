@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentUrl = new URL(window.location.href);
 
       if (linkUrl.pathname !== currentUrl.pathname) {
-        alert("Redirigiendo a: " + linkUrl.href); // 👈 aparece al hacer clic si funciona
         document.body.classList.remove("page-loaded");
         setTimeout(() => {
           window.location.assign(linkUrl.href);
@@ -55,4 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.toggle("active");
     });
   }
+
+  // 🔍 TEST: detectar clic en enlace "Home"
+  const homeLink = document.querySelector('a[href="index.html"]');
+
+  if (homeLink) {
+    console.log("✅ Enlace a Home detectado");
+    homeLink.addEventListener("click", () => {
+      console.log("✅ ¡Clic en Home detectado!");
+    });
+  } else {
+    console.log("❌ No se encontró el enlace a Home");
+  }
 });
+
