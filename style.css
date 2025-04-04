@@ -422,3 +422,15 @@ body.page-loaded {
 
   }
 }
+
+@media (max-width: 768px) {
+  .header__menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    background-color: rgba(255, 255, 255, 0.98); /* Leve fondo claro para visibilidad */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+}
