@@ -1,19 +1,21 @@
 function highlightActiveMenu() {
   const menuLinks = document.querySelectorAll('.header__menu__link');
-  const currentPath = window.location.pathname.replace(/\/$/, '');
+  const currentPath = window.location.pathname;
 
   menuLinks.forEach(link => {
     const linkHref = link.getAttribute('href');
-    const linkPath = '/' + linkHref.replace(/^\/|\.html$/g, '');
-    const current = currentPath.replace(/^\/|\.html$/g, '');
+    const linkUrl = new URL(linkHref, window.location.origin);
+    const linkPath = linkUrl.pathname.replace(/\/$/, '').toLowerCase();
+    const current = currentPath.replace(/\/$/, '').toLowerCase();
 
-    if (linkPath === current) {
+    if (linkPath === current || (current === '/index.html' && linkPath === '/')) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
     }
   });
 }
+
 
 window.addEventListener('load', highlightActiveMenu);
 window.addEventListener('popstate', highlightActiveMenu);
