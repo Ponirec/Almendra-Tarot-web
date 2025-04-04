@@ -1,16 +1,13 @@
 function highlightActiveMenu() {
   const menuLinks = document.querySelectorAll('.header__menu__link');
-  const currentPath = window.location.pathname;
+  const currentPath = window.location.pathname.replace(/\/$/, '');
 
   menuLinks.forEach(link => {
-    const linkPath = link.getAttribute('href');
+    const linkHref = link.getAttribute('href');
+    const linkPath = '/' + linkHref.replace(/^\/|\.html$/g, '');
+    const current = currentPath.replace(/^\/|\.html$/g, '');
 
-    const normalizedCurrentPath = currentPath === '/' ? '/index.html' : currentPath;
-    const normalizedLinkPath = linkPath === currentPath || 
-      (currentPath === '/' && linkPath === 'index.html') ||
-      (currentPath.endsWith('/') && linkPath === 'index.html');
-
-    if (normalizedLinkPath) {
+    if (linkPath === current) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
@@ -22,7 +19,6 @@ window.addEventListener('load', highlightActiveMenu);
 window.addEventListener('popstate', highlightActiveMenu);
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("menuactivo.js is working");
   document.body.classList.add("page-loaded");
 
   const links = document.querySelectorAll("a[href]");
@@ -45,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // hamburguesa
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu");
 
@@ -54,12 +49,5 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.toggle("active");
     });
   }
-
-  // 🧪 Debug: contar enlaces a Home
-  const allHomeLinks = document.querySelectorAll('a[href="index.html"]');
-  console.log("🧪 Encontrados enlaces a Home:", allHomeLinks.length);
-
-  allHomeLinks.forEach((link, index) => {
-    console.log(`🧪 Home link ${index + 1}:`, link.outerHTML);
-  });
 });
+
