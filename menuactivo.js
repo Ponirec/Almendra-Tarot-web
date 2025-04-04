@@ -27,27 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const links = document.querySelectorAll("a[href]");
 
-links.forEach(link => {
-  const href = link.getAttribute("href");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
 
-  if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
+    if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
 
-  link.addEventListener("click", function (e) {
-    const linkUrl = new URL(href, window.location.href);
-    const currentUrl = new URL(window.location.href);
+    link.addEventListener("click", function (e) {
+      const linkUrl = new URL(href, window.location.href);
+      const currentUrl = new URL(window.location.href);
 
-    // Comparamos solo el pathname
-    if (linkUrl.pathname !== currentUrl.pathname) {
-      e.preventDefault();
-      document.body.classList.remove("page-loaded");
-      setTimeout(() => {
-        window.location.assign(linkUrl.href);
-      }, 500);
-    }
-    // Si es la misma página, dejamos que el navegador maneje el clic (no hacemos nada)
+      // Comparamos solo el pathname
+      if (linkUrl.pathname !== currentUrl.pathname) {
+        document.body.classList.remove("page-loaded");
+        setTimeout(() => {
+          window.location.assign(linkUrl.href);
+        }, 500);
+      }
+      // Si es la misma página, dejamos que el navegador maneje el clic (no hacemos nada)
+    });
   });
-});
-
 
   // hamburguesa
   const toggle = document.getElementById("menu-toggle");
