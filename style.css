@@ -53,10 +53,15 @@ h1, h2, h3 {
 }
 
 .header__menu__link.active {
-  color: white; /* Change the color of the active link */
-  background-color: var(--color-primario); /* Add background color to the active link */
-  font-weight: bold; /* Example: make the active link bold */
+  color: white;
+  background-color: var(--color-primario);
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
+
 
 .header__menu__link:hover {
   color: white; /* Change the color of the hover link */
