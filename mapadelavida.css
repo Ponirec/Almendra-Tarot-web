@@ -171,12 +171,19 @@ body {
       padding: 1.5rem;
     }
   
-    .tarot-map {
-      padding: 1rem;
-    }
-  
     h1, h2, h3, p {
       text-align: center;
     }
+
+    .tarot-map {
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+    }
+    
+    .header__menu {
+      z-index: 2000; /* asegurado en style.css */
+    }
+    
   }
   
