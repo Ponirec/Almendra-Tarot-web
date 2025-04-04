@@ -36,14 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const linkUrl = new URL(href, window.location.href);
       const currentUrl = new URL(window.location.href);
 
-      // Comparamos solo el pathname
       if (linkUrl.pathname !== currentUrl.pathname) {
+        alert("Redirigiendo a: " + linkUrl.href); // 👈 aparece al hacer clic si funciona
         document.body.classList.remove("page-loaded");
         setTimeout(() => {
           window.location.assign(linkUrl.href);
         }, 500);
       }
-      // Si es la misma página, dejamos que el navegador maneje el clic (no hacemos nada)
     });
   });
 
