@@ -55,16 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🔍 TEST: detectar clic en enlace "Home"
-  const homeLink = document.querySelector('a[href="index.html"]');
+  // 🧪 Debug: contar enlaces a Home
+  const allHomeLinks = document.querySelectorAll('a[href="index.html"]');
+  console.log("🧪 Encontrados enlaces a Home:", allHomeLinks.length);
 
-  if (homeLink) {
-    console.log("✅ Enlace a Home detectado");
-    homeLink.addEventListener("click", () => {
-      console.log("✅ ¡Clic en Home detectado!");
-    });
-  } else {
-    console.log("❌ No se encontró el enlace a Home");
-  }
+  allHomeLinks.forEach((link, index) => {
+    console.log(`🧪 Home link ${index + 1}:`, link.outerHTML);
+  });
 });
-
