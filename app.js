@@ -111,36 +111,38 @@ const cartas = [
   },
 ];
 
-document.getElementById("mostrarCarta").addEventListener("click", function() {
-  const cartaAleatoria = cartas[Math.floor(Math.random() * cartas.length)];
+// Verificamos si el botón existe antes de usarlo
+const botonCarta = document.getElementById("mostrarCarta");
+
+if (botonCarta) {
   const cartaElemento = document.getElementById("cartaMostrada");
 
-  // Agregamos la carta con animación
-  cartaElemento.innerHTML = `
-    <div class="carta">
-      <h2>${cartaAleatoria.nombre}</h2>
-      <img src="${cartaAleatoria.imagen}" alt="${cartaAleatoria.nombre}">
-      <p>${cartaAleatoria.significado}</p>
-    </div>
-  `;
+  botonCarta.addEventListener("click", function () {
+    const cartaAleatoria = cartas[Math.floor(Math.random() * cartas.length)];
 
-  // Aplicamos animación
-  cartaElemento.classList.remove("fade-in");
-  void cartaElemento.offsetWidth; // Hack para reiniciar animación
-  cartaElemento.classList.add("fade-in");
+    if (!cartaElemento) return; // Seguridad adicional
 
-  // Scroll to the card with improved accuracy
-  const card = document.getElementById("cartaMostrada");
-  const offset = 100; // Adjust this value as needed
+    // Agregamos la carta con animación
+    cartaElemento.innerHTML = `
+      <div class="carta">
+        <h2>${cartaAleatoria.nombre}</h2>
+        <img src="${cartaAleatoria.imagen}" alt="${cartaAleatoria.nombre}">
+        <p>${cartaAleatoria.significado}</p>
+      </div>
+    `;
 
-  // Use requestAnimationFrame for smoother scrolling
-  requestAnimationFrame(() => {
-      const yCoordinate = card.getBoundingClientRect().top + window.pageYOffset;
+    // Aplicamos animación
+    cartaElemento.classList.remove("fade-in");
+    void cartaElemento.offsetWidth;
+    cartaElemento.classList.add("fade-in");
+
+    // Scroll suave hacia la carta
+    const offset = 100;
+    requestAnimationFrame(() => {
+      const yCoordinate = cartaElemento.getBoundingClientRect().top + window.pageYOffset;
       const yOffset = yCoordinate - offset;
 
-      window.scrollTo({ top: yOffset, behavior: 'smooth' });
+      window.scrollTo({ top: yOffset, behavior: "smooth" });
+    });
   });
-});
-
-
-  
+}
