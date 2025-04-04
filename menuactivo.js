@@ -8,6 +8,12 @@ function highlightActiveMenu() {
     const linkPath = linkUrl.pathname.replace(/\/$/, '').toLowerCase();
     const current = currentPath.replace(/\/$/, '').toLowerCase();
 
+    console.log('🧪 Comparando...');
+    console.log('→ linkHref:', linkHref);
+    console.log('→ linkPath:', linkPath);
+    console.log('→ current:', current);
+
+
     if (linkPath === current || (current === '/index.html' && linkPath === '/')) {
       link.classList.add('active');
     } else {
