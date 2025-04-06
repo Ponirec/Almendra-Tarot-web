@@ -74,7 +74,7 @@ h1, h2, h3 {
 }
 
 .iconos {
-    width: 70px;
+    width: 40px;
     height: auto;
     border-radius: 50%;
     padding-top: 10px;
@@ -110,7 +110,7 @@ h1, h2, h3 {
 }
 
 .button {
-  margin-top: 3%;
+  margin-top: 33%;
   margin-bottom: auto;
   background-color: var(--color-primario); /* Use your primary color */
   color: white; /* White text */
@@ -423,8 +423,9 @@ body.page-loaded {
     font-size: 16px;
   }
 
-  .container {
-
+  .container-cartadehoy {
+    padding-top: 100px;
+    text-align: center;
   }
 }
 

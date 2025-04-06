@@ -88,4 +88,22 @@ const meanings = {
     `;
   });
   
+  document.addEventListener("DOMContentLoaded", () => {
+    const boton = document.getElementById("verEtapa");
+    const destino = document.getElementById("miViaje");
+  
+    if (boton && destino) {
+      boton.addEventListener("click", () => {
+        const offset = 100; // Ajustá este valor según tu diseño
+        const yCoordinate = destino.getBoundingClientRect().top + window.pageYOffset;
+        const yOffset = yCoordinate - offset;
+  
+        window.scrollTo({
+          top: yOffset,
+          behavior: "smooth"
+        });
+      });
+    }
+  });
+  
   
