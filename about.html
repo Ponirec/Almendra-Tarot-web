@@ -42,8 +42,35 @@
     <script src="menuactivo.js"></script>
 
     <div class="container" style="margin-top: 40px; text-align: center;">
-        <button onclick="history.back()" class="button">←</button>
-      </div>
+        <button class="button" onclick="goToPreviousPage()">← Volver</button>
+      </div>    
+      
+      <script>
+        function goToPreviousPage() {
+          const path = window.location.pathname.toLowerCase();
+          
+          // Orden personalizado de las secciones
+          const pages = [
+            "index.html",
+            "cartadehoy.html",
+            "about.html",
+            "servicios.html",
+            "testimonios.html",
+            "mapadelavida.html",
+            "contacto.html"
+          ];
+      
+          const currentPage = path.split("/").pop();
+          const currentIndex = pages.indexOf(currentPage);
+      
+          if (currentIndex > 0) {
+            const previousPage = pages[currentIndex - 1];
+            window.location.href = previousPage;
+          } else {
+            window.location.href = "index.html";
+          }
+        }
+      </script>
       
 </body>
 </html>

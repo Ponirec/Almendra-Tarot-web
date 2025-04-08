@@ -81,6 +81,15 @@ h1, h2, h3 {
     padding-bottom: 10px;
 }
 
+.bloque-carta-container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
 .container {
     display: grid;
     place-items: center;
@@ -153,8 +162,36 @@ h1, h2, h3 {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Change shadow on hover */
   transform: translateY(-2px); /* Move up slightly on hover */
 }
+
+.button-carta {
+  margin-top: 15vh;
+}
+
+#verEtapa {
+  margin-top: 10px;
+}
+
    /* juego carta */ 
-#cartaMostrada {
+
+   .intro-carta-container {
+    height: 70vh; /* o 100vh si querés que llene toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bloque-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+  
+
+  #cartaMostrada {
     text-align: center;
     margin-top: 20px;
     padding: 10px;
@@ -169,7 +206,7 @@ h1, h2, h3 {
     overflow: hidden; /* Add this line */
 }
 
-.carta img {
+  .carta img {
     width: 100%;
     max-width: 300px;
     height: auto;
@@ -195,6 +232,21 @@ h1, h2, h3 {
 
   /* Responsive: mejorar visual en celulares */
 @media (max-width: 768px) {
+
+  .bloque-inicio {
+    padding-top: 50px;
+    min-height: auto;
+  }
+
+  .button {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .button-carta {
+    margin-top: 20vh;
+  }
+
   .carta {
     width: 95%;
     padding: 15px;
@@ -430,6 +482,11 @@ body.page-loaded {
 }
 
 @media (max-width: 768px) {
+
+#verEtapa {
+  margin-top: 10px;
+}
+
   .header__menu {
     position: absolute !important;
     top: 60px !important;
@@ -440,4 +497,6 @@ body.page-loaded {
     box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
   }
 }
+
+
 
