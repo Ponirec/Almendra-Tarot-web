@@ -498,5 +498,64 @@ body.page-loaded {
   }
 }
 
+/*Mailchimp*/
+.formulario-mailchimp {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f1e4;
+  border-radius: 15px;
+  font-family: "Alice", serif;
+  color: #5a3e1b;
+  text-align: center;
+}
+
+.formulario-mailchimp h2 {
+  margin-bottom: 15px;
+}
+
+.formulario-mailchimp input[type="email"] {
+  padding: 10px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.formulario-mailchimp .boton-suscribir {
+  background-color: #B17F59;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-family: "Alice", serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-mailchimp .boton-suscribir:hover {
+  background-color: #8a5e3e;
+}
+
+@media (max-width: 600px) {
+  .formulario-mailchimp {
+    margin: 20px;
+  }
+}
+
+.formulario-mailchimp input[type="text"],
+.formulario-mailchimp input[type="email"] {
+  padding: 10px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+
+
 
 
