@@ -100,7 +100,8 @@
 
   <!-- FORMULARIO MAILCHIMP -->
   <section class="formulario-mailchimp">
-    <form action="https://gmail.us16.list-manage.com/subscribe/post?u=1a94f58b390be563228f4fafa&amp;id=40e40892f2&amp;f_id=00043ae0f0" method="post" target="_blank" novalidate>
+    <form action="https://gmail.us16.list-manage.com/subscribe/post?u=1a94f58b390be563228f4fafa&amp;id=40e40892f2" method="POST" target="_self" novalidate onsubmit="redirectToGracias()">
+
       <h2>Suscríbete a las novedades de Almendra Tarot ✨</h2>
   
       <label for="mce-FNAME">Nombre:</label>
@@ -168,8 +169,14 @@
   </script>
   
   <script>
+    function redirectToGracias() {
+      setTimeout(() => {
+        window.location.href = "mapadelavida.html#gracias";
+      }, 100);
+    }
+  
+    // Mostrar mensaje si la URL tiene #gracias
     document.addEventListener("DOMContentLoaded", () => {
-      // Detecta si viene desde Mailchimp con #gracias
       if (window.location.hash === "#gracias") {
         const mensaje = document.createElement("div");
         mensaje.textContent = "¡Gracias por suscribirte a Almendra Tarot! 🌟 Revisa tu correo 📬";
@@ -183,13 +190,13 @@
         mensaje.style.color = "#5a3e1b";
         mensaje.style.fontFamily = "Alice, serif";
   
-        // Insertar antes del botón Volver
         const container = document.querySelector(".container");
-        container.parentNode.insertBefore(mensaje, container);
+        if (container) {
+          container.parentNode.insertBefore(mensaje, container);
+        }
       }
     });
   </script>
   
-
 </body>
 </html>
