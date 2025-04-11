@@ -555,6 +555,18 @@ body.page-loaded {
   font-size: 16px;
 }
 
+.mensaje-suscripcion-exitosa {
+  background-color: #F2E2B1;
+  border: 2px solid #B17F59;
+  padding: 15px;
+  border-radius: 12px;
+  color: #5a3e1b;
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Alice", serif;
+  font-size: 18px;
+}
+
 
 
 

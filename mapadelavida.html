@@ -101,7 +101,7 @@
   <!-- FORMULARIO MAILCHIMP -->
   <section class="formulario-mailchimp">
     <form action="https://gmail.us16.list-manage.com/subscribe/post?u=1a94f58b390be563228f4fafa&amp;id=40e40892f2&amp;f_id=00043ae0f0" method="post" target="_blank" novalidate>
-      <h2>Suscribite a las novedades de Almendra Tarot ✨</h2>
+      <h2>Suscríbete a las novedades de Almendra Tarot ✨</h2>
   
       <label for="mce-FNAME">Nombre:</label>
       <input type="text" name="FNAME" id="mce-FNAME" placeholder="Tu nombre" required>
@@ -113,7 +113,25 @@
       <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="tu@email.com" required>
   
       <input type="submit" value="Suscribirme" class="boton-suscribir">
+
+      <script>
+        // Mostrar el mensaje solo si se llega con el parámetro ?suscrito=ok
+        const params = new URLSearchParams(window.location.search);
+        const mensaje = document.querySelector('.mensaje-suscripcion-exitosa');
+      
+        if (mensaje && !params.has('suscrito')) {
+          mensaje.style.display = 'none';
+        }
+      </script>
+      
+      
+      
     </form>
+
+    <div class="mensaje-suscripcion-exitosa" style="margin-top: 20px; color: green; text-align: center;">
+      ¡Gracias por suscribirte! 🌟 Revisa tu correo 📬
+    </div>
+    
   </section>
   
 
@@ -149,5 +167,29 @@
     }
   </script>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Detecta si viene desde Mailchimp con #gracias
+      if (window.location.hash === "#gracias") {
+        const mensaje = document.createElement("div");
+        mensaje.textContent = "¡Gracias por suscribirte a Almendra Tarot! 🌟 Revisa tu correo 📬";
+        mensaje.style.background = "#f8f1e4";
+        mensaje.style.border = "2px solid #b17f59";
+        mensaje.style.padding = "15px";
+        mensaje.style.margin = "30px auto";
+        mensaje.style.borderRadius = "10px";
+        mensaje.style.maxWidth = "400px";
+        mensaje.style.textAlign = "center";
+        mensaje.style.color = "#5a3e1b";
+        mensaje.style.fontFamily = "Alice, serif";
+  
+        // Insertar antes del botón Volver
+        const container = document.querySelector(".container");
+        container.parentNode.insertBefore(mensaje, container);
+      }
+    });
+  </script>
+  
+
 </body>
 </html>
