@@ -266,5 +266,12 @@ body {
     padding: 10px;
   }
 
+  #particles {
+    display: block !important;
+    opacity: 1 !important;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
 }
   
