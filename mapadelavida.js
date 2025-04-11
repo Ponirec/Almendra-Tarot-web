@@ -48,12 +48,13 @@ form.addEventListener("submit", (e) => {
   const imagenCarta = cartasConImagen[cartaAleatoria];
 
   resultado.innerHTML = `
-    <p>${mensaje}</p>
-    <div class="carta fade-in">
-      <h3>${cartaAleatoria}</h3>
-      <img src="${imagenCarta}" alt="${cartaAleatoria}" style="max-width: 250px; border-radius: 10px; margin-top: 10px;">
-    </div>
-  `;
+  <div class="carta fade-in">
+    <h3>${cartaAleatoria}</h3>
+    <img src="${imagenCarta}" alt="${cartaAleatoria}" style="max-width: 250px; border-radius: 10px; margin-top: 10px;">
+    <p style="margin-top: 15px;">${mensaje}</p>
+  </div>
+`;
+
 
   // 🚀 Auto scroll hacia el resultado
   const offset = 100;
