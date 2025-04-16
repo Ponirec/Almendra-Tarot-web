@@ -567,6 +567,13 @@ body.page-loaded {
   font-size: 18px;
 }
 
+@media (min-width: 768px) {
+  .volver-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
 
 
 
